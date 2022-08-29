@@ -1,0 +1,16 @@
+[package]
+name = "pyo3_nullify"
+version = "0.1.0"
+description = "Nullify usage of py03 proc macros"
+authors = ["PyO3 Project and Contributors <https://github.com/PyO3>"]
+keywords = ["pyo3", "python", "cpython", "ffi"]
+homepage = "https://github.com/ravi861/py03_nullify"
+repository = "https://github.com/ravi861/py03_nullify"
+categories = ["api-bindings", "development-tools::ffi"]
+license = "MIT license"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
