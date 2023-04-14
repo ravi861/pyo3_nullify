@@ -1,16 +1,21 @@
 [package]
 name = "pyo3_nullify"
 version = "0.1.0"
-description = "Nullify usage of py03 proc macros"
-authors = ["PyO3 Project and Contributors <https://github.com/PyO3>"]
-keywords = ["pyo3", "python", "cpython", "ffi"]
-homepage = "https://github.com/ravi861/py03_nullify"
+description = "Nullify usage of pyo3 proc macros"
+authors = ["Ravi V"]
+keywords = ["pyo3", "python", "ffi"]
 repository = "https://github.com/ravi861/py03_nullify"
-categories = ["api-bindings", "development-tools::ffi"]
-license = "MIT license"
+license = "Apache-2.0"
+readme = "README.md"
 edition = "2021"
+exclude = [".github", ".gitignore", "*.pcap", "*.log", "tags"]
 
 [lib]
 proc-macro = true
 
-[dependencies]
+[profile.release]
+strip = true
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
